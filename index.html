@@ -1,1 +1,327 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get SealSkin</title>
+    <style>
+        :root {
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border-color: #334155;
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background-color: var(--bg-primary);
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 75%);
+            color: var(--text-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 4rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin: 0 0 1rem 0;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .center-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .center-row .card {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2.5rem 2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.25);
+            background-color: #243042;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+            transition: var(--transition);
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        
+        .card:hover .card-icon {
+            transform: scale(1.1);
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.2));
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            z-index: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            z-index: 1;
+        }
+
+        .logo-selkies { background-image: url('img/selkies.svg'); }
+        .logo-chrome { background-image: url('img/chrome.svg'); }
+        .logo-firefox { background-image: url('img/firefox.svg'); }
+        .logo-ios { background-image: url('img/ios.svg'); }
+        .logo-android { background-image: url('img/android.svg'); }
+
+        .info-section {
+            border-top: 1px solid var(--border-color);
+            padding-top: 4rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .info-item h3 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item h3::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-primary);
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        .info-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(51, 65, 85, 0.5);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .footer a:hover {
+            color: var(--accent-primary);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .container { padding: 2rem 1.5rem; }
+            h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .info-section { text-align: center; }
+            .info-item h3 { justify-content: center; }
+            .center-row .card { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get SealSkin</h1>
+        <p class="hero-text">
+            Securely stream containerized desktop applications directly to your browser with complete isolation.
+        </p>
+
+        <span class="section-title">Server Component</span>
+        <div class="center-row">
+            <a href="https://github.com/linuxserver/docker-sealskin" class="card" target="_blank">
+                <div class="card-icon logo-selkies"></div>
+                <span class="card-title">SealSkin Server</span>
+                <span class="card-subtitle">Get the Docker Container</span>
+            </a>
+        </div>
+
+        <span class="section-title">Browser Extensions</span>
+        <div class="grid">
+            <a href="https://chromewebstore.google.com/detail/sealskin-isolation/lclgfmnljgacfdpmmmjmfpdelndbbfhk" class="card" target="_blank">
+                <div class="card-icon logo-chrome"></div>
+                <span class="card-title">Google Chrome</span>
+                <span class="card-subtitle">Install Extension</span>
+            </a>
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/sealskin-isolation/" class="card" target="_blank">
+                <div class="card-icon logo-firefox"></div>
+                <span class="card-title">Firefox</span>
+                <span class="card-subtitle">Get the Add-on</span>
+            </a>
+        </div>
+
+        <span class="section-title">Mobile Apps</span>
+        <div class="grid">
+            <a href="https://apps.apple.com/us/app/sealskin/id6758210210" class="card" target="_blank">
+                <div class="card-icon logo-ios"></div>
+                <span class="card-title">iOS App Store</span>
+                <span class="card-subtitle">Download for iPhone</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=io.linuxserver.sealskin" class="card" target="_blank">
+                <div class="card-icon logo-android"></div>
+                <span class="card-title">Google Play</span>
+                <span class="card-subtitle">Download for Android</span>
+            </a>
+        </div>
+
+        <div class="info-section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Remote App Access</h3>
+                    <p>Stream demanding desktop apps like IDEs and video editors directly to any device via your browser, leveraging your server's hardware.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Total Isolation</h3>
+                    <p>Execute web content and downloads in a sandboxed container on your server, keeping your local machine safe from malware and trackers.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Secure Collaboration</h3>
+                    <p>Your data, your server. Custom websocket based video/audio communication platform allows secure collaboration piped through your server.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Free & Open Source</h3>
+                    <p>SealSkin is free. The source code is open for audit and contribution, ensuring transparency and community-driven development.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="https://github.com/selkies-project/sealskin/" target="_blank">Source Code</a>
+            <a href="https://github.com/linuxserver/docker-sealskin" target="_blank">Docker Documentation</a>
+        </div>
+    </div>
+</body>
+</html>
