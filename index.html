@@ -3,325 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get SealSkin</title>
-    <style>
-        :root {
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --text-primary: #f8fafc;
-            --text-secondary: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent-primary: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --border-color: #334155;
-            --border-radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: var(--font-family);
-            background-color: var(--bg-primary);
-            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 75%);
-            color: var(--text-primary);
-            font-size: 16px;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            background-color: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 4rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin: 0 0 1rem 0;
-            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-text {
-            color: var(--text-muted);
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin: 0 auto 3.5rem auto;
-        }
-
-        .section-title {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent-primary);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            display: block;
-            opacity: 0.9;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .center-row {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-
-        .center-row .card {
-            width: 100%;
-            max-width: 350px;
-        }
-
-        .card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 2.5rem 2rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-primary);
-            box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.25);
-            background-color: #243042;
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1.5rem;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            z-index: 1;
-            transition: var(--transition);
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-        }
-        
-        .card:hover .card-icon {
-            transform: scale(1.1);
-            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.2));
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            z-index: 1;
-            margin-bottom: 0.25rem;
-        }
-
-        .card-subtitle {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            z-index: 1;
-        }
-
-        .logo-selkies { background-image: url('img/selkies.svg'); }
-        .logo-chrome { background-image: url('img/chrome.svg'); }
-        .logo-firefox { background-image: url('img/firefox.svg'); }
-        .logo-ios { background-image: url('img/ios.svg'); }
-        .logo-android { background-image: url('img/android.svg'); }
-
-        .info-section {
-            border-top: 1px solid var(--border-color);
-            padding-top: 4rem;
-            margin-top: 2rem;
-            text-align: left;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .info-item h3 {
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin: 0 0 0.75rem 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .info-item h3::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-primary);
-            border-radius: 50%;
-            margin-right: 10px;
-            box-shadow: 0 0 10px var(--accent-primary);
-        }
-
-        .info-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin: 0;
-            line-height: 1.7;
-        }
-
-        .footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(51, 65, 85, 0.5);
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-            position: relative;
-        }
-
-        .footer a:hover {
-            color: var(--accent-primary);
-        }
-
-        @media (max-width: 768px) {
-            body { padding: 1rem; }
-            .container { padding: 2rem 1.5rem; }
-            h1 { font-size: 2.5rem; }
-            .grid { grid-template-columns: 1fr; }
-            .info-section { text-align: center; }
-            .info-item h3 { justify-content: center; }
-            .center-row .card { max-width: 100%; }
-        }
-    </style>
+    <title>SealSkin | Secure Remote Browser Isolation & Desktop Application Streaming</title>
+    <meta name="description" content="Securely stream containerized desktop applications directly to your browser. Zero copy encoding, native GPU acceleration, and total privacy via WebSockets.">
+    <meta name="author" content="LinuxServer.io">
+    <meta name="keywords" content="Remote Browser Isolation, RBI, VDI, Desktop Streaming, WebSockets, Wayland, Docker, Selkies, Linux, Self-Hosted">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sealskin.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sealskin.app/">
+    <meta property="og:title" content="SealSkin | Your Browser is Your New Computer">
+    <meta property="og:description" content="Securely stream containerized desktop applications directly to your browser with complete isolation. No VPNs, no clients, just pure web.">
+    <meta property="og:image" content="https://sealskin.app/img/sealskin_dashboard.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@linuxserverio">
+    <meta name="twitter:title" content="SealSkin | Secure Remote Browser Isolation">
+    <meta name="twitter:description" content="Self-hosted remote browser isolation and desktop streaming. Native GPU acceleration and WebCodecs support.">
+    <meta name="twitter:image" content="https://sealskin.app/img/sealskin_dashboard.png">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="stylesheet" href="index.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SealSkin",
+      "url": "https://sealskin.app/",
+      "operatingSystem": "Linux, Web-based",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Securely stream containerized desktop applications directly to your browser with complete isolation.",
+      "softwareRequirements": "Docker, Linux",
+      "author": {
+        "@type": "Organization",
+        "name": "LinuxServer.io",
+        "url": "https://www.linuxserver.io",
+        "sameAs": [
+            "https://x.com/linuxserverio",
+            "https://discord.com/invite/linuxserver",
+            "https://github.com/linuxserver"
+        ]
+      },
+      "downloadUrl": "https://github.com/linuxserver/docker-sealskin",
+      "featureList": "Remote Browser Isolation, Desktop Streaming, Zero Copy Encoding, WebSockets"
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Get SealSkin</h1>
-        <p class="hero-text">
-            Securely stream containerized desktop applications directly to your browser with complete isolation.
-        </p>
 
-        <span class="section-title">Server Component</span>
-        <div class="center-row">
-            <a href="https://github.com/linuxserver/docker-sealskin" class="card" target="_blank">
-                <div class="card-icon logo-selkies"></div>
-                <span class="card-title">SealSkin Server</span>
-                <span class="card-subtitle">Get the Docker Container</span>
-            </a>
+    <header>
+        <div class="container">
+            <div class="nav-flex">
+                <a href="https://github.com/selkies-project/sealskin/" class="logo" target="_blank">
+                    <img src="img/selkies.svg" alt="SealSkin Logo">
+                    SealSkin
+                </a>
+                <nav class="nav-links">
+                    <a href="#downloads">Downloads</a>
+                    <a href="#apps">Applications</a>
+                    <a href="#features">Features</a>
+                </nav>
+            </div>
         </div>
+    </header>
 
-        <span class="section-title">Browser Extensions</span>
-        <div class="grid">
-            <a href="https://chromewebstore.google.com/detail/sealskin-isolation/lclgfmnljgacfdpmmmjmfpdelndbbfhk" class="card" target="_blank">
-                <div class="card-icon logo-chrome"></div>
-                <span class="card-title">Google Chrome</span>
-                <span class="card-subtitle">Install Extension</span>
+    <section class="hero-section">
+        <div id="hero-bg" class="hero-bg"></div>
+        <div class="container hero-content">
+            <a href="https://www.linuxserver.io/blog/webtop-4-0-wayland-is-here-engage-the-reality-engine" class="hero-badge" target="_blank" rel="noopener noreferrer">
+                Now with Wayland Support
             </a>
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/sealskin-isolation/" class="card" target="_blank">
-                <div class="card-icon logo-firefox"></div>
-                <span class="card-title">Firefox</span>
-                <span class="card-subtitle">Get the Add-on</span>
-            </a>
+            <h1>Your Browser is<br>Your New Computer.</h1>
+            <p class="hero-text">
+                Securely stream containerized desktop applications directly to your browser with complete isolation. 
+                Zero copy encoding, native GPU acceleration, and total privacy.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#downloads" style="background: var(--accent-primary); color: var(--bg-primary); padding: 1rem 2rem; border-radius: 8px; font-weight: 700; transition: var(--transition);">Get Started</a>
+                <a href="https://github.com/selkies-project/sealskin/" target="_blank" style="background: rgba(255,255,255,0.1); color: #fff; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: var(--transition);">View Source</a>
+            </div>
         </div>
+    </section>
 
-        <span class="section-title">Mobile Apps</span>
-        <div class="grid">
-            <a href="https://apps.apple.com/us/app/sealskin/id6758210210" class="card" target="_blank">
-                <div class="card-icon logo-ios"></div>
-                <span class="card-title">iOS App Store</span>
-                <span class="card-subtitle">Download for iPhone</span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=io.linuxserver.sealskin" class="card" target="_blank">
-                <div class="card-icon logo-android"></div>
-                <span class="card-title">Google Play</span>
-                <span class="card-subtitle">Download for Android</span>
-            </a>
+    <section id="downloads" class="downloads-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get SealSkin</h2>
+                <p>Deploy the server on your hardware, then connect securely from any device.</p>
+            </div>
+
+            <div class="download-category">
+                <span class="category-title">Server Component</span>
+                <div class="center-card-row">
+                    <a href="https://github.com/linuxserver/docker-sealskin" class="card" target="_blank">
+                        <div class="card-icon logo-selkies"></div>
+                        <h3>SealSkin Server</h3>
+                        <p>Get the Docker Container. Self-hosted, end-to-end encrypted control plane.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="download-category">
+                <span class="category-title">Browser Extensions</span>
+                <div class="grid-2">
+                    <a href="https://chromewebstore.google.com/detail/sealskin-isolation/lclgfmnljgacfdpmmmjmfpdelndbbfhk" class="card" target="_blank">
+                        <div class="card-icon logo-chrome"></div>
+                        <h3>Google Chrome</h3>
+                        <p>Intercept downloads and isolate tabs.</p>
+                    </a>
+                    <a href="https://addons.mozilla.org/en-US/firefox/addon/sealskin-isolation/" class="card" target="_blank">
+                        <div class="card-icon logo-firefox"></div>
+                        <h3>Firefox</h3>
+                        <p>Secure browsing for Mozilla users.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="download-category">
+                <span class="category-title">Mobile Apps</span>
+                <div class="grid-2">
+                    <a href="https://apps.apple.com/us/app/sealskin/id6758210210" class="card" target="_blank">
+                        <div class="card-icon logo-ios"></div>
+                        <h3>iOS App Store</h3>
+                        <p>Download for iPhone & iPad.</p>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=io.linuxserver.sealskin" class="card" target="_blank">
+                        <div class="card-icon logo-android"></div>
+                        <h3>Google Play</h3>
+                        <p>Get it on Google Play.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tech-block">
+                <div class="tech-text">
+                    <h3>Quick Start with DuckDNS</h3>
+                    <p>
+                        Don't have a domain or know how to manage SSL certificates? No problem. 
+                        We provide a helper script to spin up SealSkin with a legitimate wildcard SSL certificate using DuckDNS.
+                    </p>
+                    <p>
+                        Simply navigate to <a href="https://www.duckdns.org/" target="_blank" style="color: var(--accent-primary); text-decoration: underline;">DuckDNS.org</a>, create a sub-domain, get your token, and run the installation script on your Linux server.
+                    </p>
+                </div>
+                <div class="tech-visual">
+                    <code style="display: block; color: #a5b4fc; margin-bottom: 0.5rem;">// Auto-Install Script</code>
+                    <div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button>mkdir sealskin
+cd sealskin
+bash <(curl -sSL https://raw.githubusercontent.com/linuxserver/docker-sealskin/refs/heads/master/install.sh)</div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                        This will setup pathing, ownership, docker config, and a legit wildcard SSL certificate.
+                    </p>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <div class="info-section">
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Remote App Access</h3>
-                    <p>Stream demanding desktop apps like IDEs and video editors directly to any device via your browser, leveraging your server's hardware.</p>
-                </div>
-                <div class="info-item">
-                    <h3>Total Isolation</h3>
-                    <p>Execute web content and downloads in a sandboxed container on your server, keeping your local machine safe from malware and trackers.</p>
-                </div>
-                <div class="info-item">
-                    <h3>Secure Collaboration</h3>
-                    <p>Your data, your server. Custom websocket based video/audio communication platform allows secure collaboration piped through your server.</p>
-                </div>
-                <div class="info-item">
-                    <h3>Free & Open Source</h3>
-                    <p>SealSkin is free. The source code is open for audit and contribution, ensuring transparency and community-driven development.</p>
-                </div>
+    <section id="apps" class="app-scroller">
+        <div class="container section-header">
+            <h2>The Library</h2>
+            <p>Over 100+ containerized applications and desktops ready to launch.</p>
+        </div>
+        <div class="scroller-track" id="appTrack">
+            <!-- Apps injected via JS -->
+        </div>
+    </section>
+
+    <section id="features" class="container">
+        <div class="section-header">
+            <h2>Why SealSkin?</h2>
+            <p>A novel approach to remote computing, built from the ground up for the modern web.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <h3>Total Isolation</h3>
+                <p>Execute web content and downloads in a sandboxed container on your server. Malware stops at the container boundary, never reaching your local device.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <h3>WebSockets, Not WebRTC</h3>
+                <p>We bypass the complexity of STUN/TURN servers. If you can load a webpage over HTTPS, you can stream a high-performance desktop.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎮</span>
+                <h3>Low Latency Input</h3>
+                <p>Experience near-native responsiveness with gamepad support, absolute mouse positioning, and high-fidelity audio forwarding.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🐧</span>
+                <h3>Native 3D Support</h3>
+                <p>Run demanding GL applications like Blender or FreeCAD, working just like a native monitor through your web browser.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎨</span>
+                <h3>The App Laboratory</h3>
+                <p>Don't just run our apps—build your own. Use our Meta App system to create custom launchers and toolsets without writing Dockerfiles.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">👥</span>
+                <h3>Multi-User Collaboration</h3>
+                <p>Pass the controller. Invite users to your session with role-based access tokens for true real-time collaborative computing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container tech-section">
+
+        <div class="tech-block reversed">
+            <div class="tech-text">
+                <h3>Secure Self-Hosted Collaboration</h3>
+                <p>
+                    Turn any isolated container into a <span class="highlight">multiplayer workspace</span> instantly. No third-party relays, no privacy trade-offs—just you and your guests connected directly to your server.
+                </p>
+                <p>
+                    Generate secure invite links with granular permissions. Seamlessly pass <strong>Mouse & Keyboard</strong> control to a colleague for pair programming, or grant <strong>Read-Only</strong> access for demonstrations.
+                </p>
+                <p>
+                    For gaming, the host can map remote users to specific virtual <strong>Gamepads</strong>, enabling low-latency "couch co-op" experiences over the web with full audio synchronization and integrated chat.
+                </p>
+            </div>
+            <div class="tech-visual">
+                <img src="img/collaboration.png" alt="SealSkin Collaboration Interface">
+            </div>
+        </div>
+        
+        <div class="tech-block">
+            <div class="tech-text">
+                <h3>The Selkies Project Foundation</h3>
+                <p>
+                    Traditional remote desktop solutions struggle with corporate firewalls and complex NAT traversal. <span class="highlight">Selkies changes the game.</span>
+                </p>
+                <p>
+                    By leveraging standard <strong>WebSockets over port 443</strong>, we deliver a 60fps, low-latency stream that works anywhere the web works. No VPNs, no dedicated clients, no networking headaches.
+                </p>
+                <p>
+                    The client uses modern <strong>WebCodecs</strong> to hardware decode H.264 video directly in the browser, ensuring your battery stays charged and your fan stays silent with a full desktop experience.
+                </p>
+            </div>
+            <div class="tech-visual">
+                <video controls>
+                    <source src="img/selkies3d.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
 
-        <div class="footer">
-            <a href="https://github.com/selkies-project/sealskin/" target="_blank">Source Code</a>
-            <a href="https://github.com/linuxserver/docker-sealskin" target="_blank">Docker Documentation</a>
+        <div class="tech-block reversed">
+            <div class="tech-text">
+                <h3>Ephemeral Orchestration</h3>
+                <p>
+                    SealSkin isn't just a streamer; it's a lifecycle manager. Need to check a suspicious link? Launch a <strong>Cleanroom</strong> session.
+                </p>
+                <p>
+                    The moment you close the tab, the container is destroyed—cookies, history, and downloads vanish. Need to code? Mount a <strong>Persistent Home</strong> directory and your environment is exactly where you left it, accessible from any device.
+                </p>
+                <p>
+                    All sessions are protected by <strong>End-to-End Encryption</strong> keys generated on the fly, ensuring only you hold the keys to your pixels.
+                </p>
+            </div>
+            <div class="tech-visual">
+                <img src="img/sealskin_dashboard.png" alt="SealSkin Dashboard Interface">
+            </div>
         </div>
-    </div>
+
+        <div class="tech-block">
+            <div class="tech-text">
+                <h3>The App Laboratory</h3>
+                <p>
+                    Power users shouldn't be limited to a static list of apps. With <strong>Meta Apps</strong>, you can curate your own digital workspace.
+                </p>
+                <p>
+                    Take a base desktop image, inject a custom startup script, upload your own icon, and customize away in a full desktop interface. SealSkin treats your custom configuration as a first-class citizen in the library.
+                </p>
+                <p>
+                    Whether it's a specific development IDE configuration or a legacy toolset, you can build it once and launch it anywhere.
+                </p>
+            </div>
+            <div class="tech-visual">
+                <img src="img/app_lab_config.png" alt="Meta App Configuration Screen">
+            </div>
+        </div>
+
+        <div class="tech-block reversed">
+            <div class="tech-text">
+                <h3>Powered by Smithay & Pixelflux</h3>
+                <p>
+                    We've moved beyond legacy Xvfb. Our new Wayland mode leverages <strong>Smithay</strong> to create a virtual framebuffer in userspace that acts as a true compositor.
+                </p>
+                <p>
+                    This unlocks <strong>Zero Copy</strong> encoding on NVIDIA, Intel, and AMD GPUs. Our driver, <strong>Pixelflux</strong>, grabs pixel buffers directly from GPU memory and feeds them to the hardware encoder. The CPU never touches a pixel.
+                </p>
+                <p>
+                    The result? 60fps+ gaming-grade streaming performance on modest hardware.
+                </p>
+                <div class="code-block" style="margin-top: 1.5rem;"><button class="copy-btn" onclick="copyCode(this)">Copy</button>-e PIXELFLUX_WAYLAND=true</div>
+            </div>
+            <div class="tech-visual">
+                <img src="img/pixelflux_architecture.png" alt="Pixelflux Zero Copy Architecture">
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                &copy; 2026 LinuxServer.io
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/selkies-project/sealskin/" target="_blank">Source Code</a>
+                <a href="https://github.com/linuxserver/docker-sealskin" target="_blank">Docker</a>
+                <a href="https://discord.com/invite/linuxserver" target="_blank">Discord</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="apps.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
