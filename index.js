@@ -14,7 +14,7 @@ function createAppCard(app) {
         img.src = baseImgUrl + app.img;
     }
     img.alt = app.name;
-    img.loading = "lazy";
+    img.loading = "eager";
     const span = document.createElement('span');
     span.textContent = app.name;
     a.appendChild(img);
@@ -23,8 +23,15 @@ function createAppCard(app) {
 }
 
 if (typeof apps !== 'undefined') {
-    apps.forEach(app => track.appendChild(createAppCard(app)));
-    apps.forEach(app => track.appendChild(createAppCard(app)));
+    const track1 = document.createElement('div');
+    track1.className = 'sliding-track';
+    const track2 = document.createElement('div');
+    track2.className = 'sliding-track';
+    track2.setAttribute('aria-hidden', 'true'); 
+    apps.forEach(app => track1.appendChild(createAppCard(app)));
+    apps.forEach(app => track2.appendChild(createAppCard(app)));
+    track.appendChild(track1);
+    track.appendChild(track2);
     initHeroAnimation();
 }
 
