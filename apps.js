@@ -20,6 +20,7 @@ const apps = [
     { name: "Dosbox Staging", img: "dosbox-logo.png", url: "https://github.com/linuxserver/docker-dosbox-stating" },
     { name: "Doublecommander", img: "doublecommander-icon.png", url: "https://github.com/linuxserver/docker-doublecommander" },
     { name: "Duckstation", img: "duckstation-logo.png", url: "https://github.com/linuxserver/docker-duckstation" },
+    { name: "Eden", img: "eden-logo.png", url: "https://github.com/linuxserver/docker-eden" },
     { name: "Ferdium", img: "ferdium-logo.png", url: "https://github.com/linuxserver/docker-ferdium" },
     { name: "Filezilla", img: "filezilla-logo.png", url: "https://github.com/linuxserver/docker-filezilla" },
     { name: "Firefox", img: "firefox-logo.png", url: "https://github.com/linuxserver/docker-firefox" },
