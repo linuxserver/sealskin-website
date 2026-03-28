@@ -74,6 +74,7 @@ const apps = [
     { name: "Ungoogled Chromium", img: "ungoogled-chromium-logo.png", url: "https://github.com/linuxserver/docker-ungoogled-chromium" },
     { name: "Vivaldi", img: "vivaldi-logo.png", url: "https://github.com/linuxserver/docker-vivaldi" },
     { name: "Vlc", img: "vlc-logo.png", url: "https://github.com/linuxserver/docker-vlc" },
+    { name: "Vscode", img: "vscode-logo.png", url: "https://github.com/linuxserver/docker-vscode" },
     { name: "Vscodium", img: "vscodium-icon.png", url: "https://github.com/linuxserver/docker-vscodium" },
     { name: "Webcord", img: "webcord-icon.png", url: "https://github.com/linuxserver/docker-webcord" },
     { name: "Webstation", img: "webstation-logo.png", url: "https://github.com/linuxserver/docker-webstation" },
