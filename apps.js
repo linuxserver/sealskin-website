@@ -11,7 +11,6 @@ const apps = [
     { name: "Calligra", img: "calligra-logo.png", url: "https://github.com/linuxserver/docker-calligra" },
     { name: "Chrome", img: "chrome-logo.png", url: "https://github.com/linuxserver/docker-chrome" },
     { name: "Chromium", img: "chromium-logo.png", url: "https://github.com/linuxserver/docker-chromium" },
-    { name: "Citron", img: "citron-logo.png", url: "https://github.com/linuxserver/docker-citron" },
     { name: "Cura", img: "cura-logo.png", url: "https://github.com/linuxserver/docker-cura" },
     { name: "Darktable", img: "darktable-logo.png", url: "https://github.com/linuxserver/docker-darktable" },
     { name: "Digikam", img: "digikam.png", url: "https://github.com/linuxserver/docker-digikam" },
