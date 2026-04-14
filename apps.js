@@ -4,6 +4,7 @@ const apps = [
     { name: "Audacity", img: "audacity-logo.png", url: "https://github.com/linuxserver/docker-audacity" },
     { name: "Azahar", img: "azahar-logo.png", url: "https://github.com/linuxserver/docker-azahar" },
     { name: "Bambustudio", img: "bambustudio-logo.png", url: "https://github.com/linuxserver/docker-bambustudio" },
+    { name: "Blade of Agony", img: "boa-logo.png", url: "https://github.com/linuxserver/docker-blade-of-agony" },
     { name: "Blender", img: "blender-logo.png", url: "https://github.com/linuxserver/docker-blender" },
     { name: "Boinc", img: "boinc-logo.png", url: "https://github.com/linuxserver/docker-boinc" },
     { name: "Brave", img: "brave-logo.png", url: "https://github.com/linuxserver/docker-brave" },
