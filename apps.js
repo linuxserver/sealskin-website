@@ -31,6 +31,7 @@ const apps = [
     { name: "Gitqlient", img: "gitqlient-icon.png", url: "https://github.com/linuxserver/docker-gitqlient" },
     { name: "Gzdoom", img: "gzdoom-logo.png", url: "https://github.com/linuxserver/docker-gzdoom" },
     { name: "Handbrake", img: "handbrake-logo.png", url: "https://github.com/linuxserver/docker-handbrake" },
+    { name: "Helium", img: "helium-logo.png", url: "https://github.com/linuxserver/docker-helium" },
     { name: "Inkscape", img: "inkscape-logo.png", url: "https://github.com/linuxserver/docker-inkscape" },
     { name: "Intellij Idea", img: "intellij-idea-logo.png", url: "https://github.com/linuxserver/docker-intellij-idea" },
     { name: "Joplin", img: "joplin-logo.png", url: "https://github.com/linuxserver/docker-joplin" },
