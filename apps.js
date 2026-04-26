@@ -81,6 +81,7 @@ const apps = [
     { name: "Webstation", img: "webstation-logo.png", url: "https://github.com/linuxserver/docker-webstation" },
     { name: "Webtop", img: "webtop-logo.png", url: "https://github.com/linuxserver/docker-webtop" },
     { name: "Weixin", img: "weixin-logo.png", url: "https://github.com/linuxserver/docker-weixin" },
+    { name: "WineGUI", img: "winegui-logo.png", url: "https://github.com/linuxserver/docker-winegui" },
     { name: "Wireshark", img: "wireshark-icon.png", url: "https://github.com/linuxserver/docker-wireshark" },
     { name: "Wps Office", img: "wps-office-icon.png", url: "https://github.com/linuxserver/docker-wps-office" },
     { name: "Xemu", img: "xemu-logo.png", url: "https://github.com/linuxserver/docker-xemu" },
