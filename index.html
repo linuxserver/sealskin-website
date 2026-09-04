@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="SealSkin | Secure Remote Browser Isolation">
     <meta name="twitter:description" content="Self-hosted remote browser isolation and desktop streaming. Native GPU acceleration and WebCodecs support.">
     <meta name="twitter:image" content="https://sealskin.app/img/sealskin_dashboard.png">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#0d1117">
     <link rel="stylesheet" href="index.css">
     <script type="application/ld+json">
     {
@@ -57,8 +57,8 @@
         <div class="container">
             <div class="nav-flex">
                 <a href="https://github.com/selkies-project/sealskin/" class="logo" target="_blank">
-                    <img src="img/selkies.svg" alt="SealSkin Logo">
-                    SealSkin
+                    <img src="img/sealskin.png" alt="SealSkin Logo">
+                    <span>SealSkin</span>
                 </a>
                 <nav class="nav-links">
                     <a href="#downloads">Downloads</a>
@@ -80,9 +80,9 @@
                 Securely stream containerized desktop applications directly to your browser with complete isolation. 
                 Zero copy encoding, native GPU acceleration, and total privacy.
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#downloads" style="background: var(--accent-primary); color: var(--bg-primary); padding: 1rem 2rem; border-radius: 8px; font-weight: 700; transition: var(--transition);">Get Started</a>
-                <a href="https://github.com/selkies-project/sealskin/" target="_blank" style="background: rgba(255,255,255,0.1); color: #fff; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: var(--transition);">View Source</a>
+            <div class="hero-actions">
+                <a href="#downloads" class="btn btn-primary">Get Started</a>
+                <a href="https://github.com/selkies-project/sealskin/" target="_blank" class="btn btn-secondary">View Source</a>
             </div>
         </div>
     </section>
@@ -98,7 +98,7 @@
                 <span class="category-title">Server Component</span>
                 <div class="center-card-row">
                     <a href="https://github.com/linuxserver/docker-sealskin" class="card" target="_blank">
-                        <div class="card-icon logo-selkies"></div>
+                        <div class="card-icon logo-sealskin"></div>
                         <h3>SealSkin Server</h3>
                         <p>Get the Docker Container. Self-hosted, end-to-end encrypted control plane.</p>
                     </a>
@@ -145,15 +145,15 @@
                         We provide a helper script to spin up SealSkin with a legitimate wildcard SSL certificate using DuckDNS.
                     </p>
                     <p>
-                        Simply navigate to <a href="https://www.duckdns.org/" target="_blank" style="color: var(--accent-primary); text-decoration: underline;">DuckDNS.org</a>, create a sub-domain, get your token, and run the installation script on your Linux server.
+                        Simply navigate to <a href="https://www.duckdns.org/" target="_blank" class="text-link">DuckDNS.org</a>, create a sub-domain, get your token, and run the installation script on your Linux server.
                     </p>
                 </div>
                 <div class="tech-visual">
-                    <code style="display: block; color: #a5b4fc; margin-bottom: 0.5rem;">// Auto-Install Script</code>
+                    <code class="code-caption">// Auto-Install Script</code>
                     <div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button>mkdir sealskin
 cd sealskin
 bash <(curl -sSL https://raw.githubusercontent.com/linuxserver/docker-sealskin/refs/heads/master/install.sh)</div>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                    <p class="code-note">
                         This will setup pathing, ownership, docker config, and a legit wildcard SSL certificate.
                     </p>
                 </div>
