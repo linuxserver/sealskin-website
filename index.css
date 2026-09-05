@@ -280,6 +280,7 @@ header a { pointer-events: auto; }
     animation: heroScroll 80s linear infinite;
     will-change: transform;
 }
+.hero-bg.is-paused .hero-col-track { animation-play-state: paused; }
 
 .hero-col:nth-child(2n) .hero-col-track {
     animation-duration: 100s;
@@ -735,17 +736,20 @@ h1 {
 
 .scroller-track {
     display: flex;
-    gap: 1.5rem;
-    width: max-content;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
+.scroller-track::-webkit-scrollbar { display: none; }
 
 .sliding-track {
     display: flex;
     gap: 1.5rem;
     padding-right: 1.5rem;
+    flex-shrink: 0;
     width: max-content;
-    animation: scroll 60s linear infinite;
-    will-change: transform;
 }
 
 .app-card {
@@ -775,13 +779,17 @@ h1 {
     transition: opacity var(--dur);
 }
 
-.app-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent-border);
-    box-shadow: var(--shadow-md);
-    z-index: 5;
+@media (hover: hover) {
+    .app-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-border);
+        box-shadow: var(--shadow-md);
+        z-index: 5;
+    }
+    .app-card:hover::after { opacity: 1; }
+    .app-card:hover img { transform: scale(1.08); }
+    .app-card:hover span { color: var(--text-primary); }
 }
-.app-card:hover::after { opacity: 1; }
 
 .app-card img {
     width: 76px;
@@ -796,7 +804,6 @@ h1 {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
     transition: transform var(--dur) var(--ease-spring);
 }
-.app-card:hover img { transform: scale(1.08); }
 
 .app-card span {
     font-size: 0.85rem;
@@ -806,7 +813,6 @@ h1 {
     position: relative;
     z-index: 1;
 }
-.app-card:hover span { color: var(--text-primary); }
 
 /* --------------------------------------------------------------------------
    Lightbox
@@ -841,11 +847,6 @@ h1 {
 /* --------------------------------------------------------------------------
    Keyframes
    -------------------------------------------------------------------------- */
-@keyframes scroll {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
-}
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(14px); }
     to { opacity: 1; transform: translateY(0); }
@@ -930,10 +931,11 @@ footer {
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    *, *::before, *::after {
+    *:not(.hero-col-track), *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    .sliding-track, .hero-col-track { animation: none; }
+    .hero-col-track { animation-duration: 240s; }
+    .hero-col:nth-child(2n) .hero-col-track { animation-duration: 300s; }
 }
