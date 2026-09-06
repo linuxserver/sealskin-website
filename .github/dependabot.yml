@@ -1,0 +1,11 @@
+# A static site with no package manifest: the deploy workflow's actions are the
+# only pinned versions in the repository.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
